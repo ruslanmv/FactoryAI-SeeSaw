@@ -103,3 +103,4 @@ Thumbs.db
 This setup helps ensure that your project repository contains only the necessary code and configuration files, making it easier to manage and less prone to exposing sensitive information. Adjust this template as needed to fit any specific requirements or tools you use in your project.
 /generated
 /backup
+/extraction

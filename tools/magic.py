@@ -67,7 +67,7 @@ async def generate_main_or_dependency(prompt: str, use_openai=True) -> str:
         logging.error(f"Error generating code: {e}")
         return f"Error: {e}"
 
-def extract_code(llm_output: str) -> str:
+def extract_code_old(llm_output: str) -> str:
     """
     Extract code from LLM output enclosed in triple backticks.
 
@@ -80,6 +80,28 @@ def extract_code(llm_output: str) -> str:
     code_blocks = re.findall(r"```(?:\w+\n)?(.*?)```", llm_output, re.DOTALL)
     return "\n\n".join(block.strip() for block in code_blocks if block.strip()) or "No valid code found."
 
+
+def extract_code(llm_output: str) -> str:
+    """
+    Extract code from LLM output. If enclosed in triple backticks, strip them.
+    If no backticks are present, assume the entire output is the code.
+    
+    Args:
+        llm_output (str): The LLM output.
+    
+    Returns:
+        str: The cleaned code.
+    """
+    # Try to find code blocks within triple backticks
+    code_blocks = re.findall(r"```(?:\w+\n)?(.*?)```", llm_output, re.DOTALL)
+    
+    # If code blocks exist, use them; otherwise, assume the entire output is code
+    if code_blocks:
+        return "\n\n".join(block.strip() for block in code_blocks if block.strip())
+    else:
+        return llm_output.strip()
+
+
 async def validator_function(main_code: str, dependency_code: str, original_description: str) -> (bool, str):
     """
     Validate compatibility of main code and dependency. Return True if compatible, else False with suggested main code.
@@ -90,7 +112,8 @@ async def validator_function(main_code: str, dependency_code: str, original_desc
         f"The following is the dependency code:\n\n{dependency_code}\n\n"
         "Check compatibility. Respond 'True' if compatible, or 'False' followed by the corrected main code."
         "Ensure that the corrected main code adheres strictly to the original project description."
-        "Do not include comments or explanations. Only return the raw code content."
+        "Do not include comments or explanations, and do not wrap the code in triple backticks or any other delimiters."
+        "Only return the raw code content."
     )
     response = await generate_main_or_dependency(prompt)
     if response.startswith("True"):
@@ -114,7 +137,8 @@ async def see_saw_mechanism(project_tree: list):
             logging.info(f"Generating main file: {path}")
             main_prompt = (
                 f"Generate the main file for the project:\n{description}\n\n"
-                "Do not include comments or explanations. Only return the raw code content."
+                "Do not include comments or explanations, and do not wrap the code in triple backticks or any other delimiters. "
+                "Only return the raw code content."
             )
             main_code = await generate_main_or_dependency(main_prompt)
             main_code = extract_code(main_code)
