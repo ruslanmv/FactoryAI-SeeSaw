@@ -311,7 +311,7 @@ async def see_saw_mechanism_partial(project_tree: list):
 import time
 import logging
 
-async def see_saw_mechanism(project_tree: list):
+async def see_saw_mechanism_new1(project_tree: list):
     """
     Implement the See-Saw mechanism for generating main and dependency files.
     """
@@ -402,6 +402,123 @@ async def see_saw_mechanism(project_tree: list):
     }
     print("metrics see-saw",metrics)
     return "Project built successfully!", generated_files, metrics
+
+
+import time
+import logging
+
+async def see_saw_mechanism(project_tree: list):
+    """
+    Implement the See-Saw mechanism for generating main and dependency files.
+    """
+    # Initialize metrics
+    global token_usage, dependency_checks, aligned_dependencies
+    token_usage = 0
+    dependency_checks = 0
+    aligned_dependencies = 0
+
+    generated_files = {}
+    original_descriptions = {item['path']: item['description'] for item in project_tree}
+    iteration_metrics = []  # List to store metrics for each iteration
+
+    # Start timing the process
+    start_time = time.time()
+
+    iteration = 1  # Initialize iteration counter
+
+    for item in project_tree:
+        path, description = item['path'], item['description']
+
+        if "main" in description.lower():
+            logging.info(f"Generating main file: {path}")
+            try:
+                main_prompt = (
+                    f"Generate the main file for the project:\n{description}\n\n"
+                    "Do not include comments or explanations. Only return the raw code content."
+                )
+                iteration_start = time.time()  # Start iteration timing
+                main_code = await generate_main_or_dependency(main_prompt)
+
+                # Track token usage
+                token_usage_main = len(main_code.split())
+                logging.info(f"token_usage_main: {token_usage_main}")
+                main_code = extract_code(main_code)
+                generated_files[path] = main_code
+
+                # Append iteration metrics
+                iteration_metrics.append({
+                    "iteration": iteration,
+                    "type": "main",
+                    "token_usage": token_usage_main,
+                    "execution_time": time.time() - iteration_start
+                })
+                iteration += 1  # Increment iteration counter
+            except Exception as e:
+                logging.error(f"Error generating code: {e}")
+                continue
+
+            dependencies = [dep for dep in project_tree if dep['path'] != path]
+            for dep in dependencies:
+                dep_path, dep_desc = dep['path'], dep['description']
+                logging.info(f"Generating dependency: {dep_path}")
+                try:
+                    dep_prompt = (
+                        f"This is the main code:\n\n{main_code}\n\n"
+                        f"Generate the dependency code for the file '{dep_path}':\n{dep_desc}\n\n"
+                        "Do not include comments or explanations. Only return the raw code content."
+                    )
+                    iteration_start = time.time()  # Start iteration timing
+                    dep_code = await generate_main_or_dependency(dep_prompt)
+
+                    # Track token usage
+                    token_usage_dep = len(dep_code.split())
+                    logging.info(f"token_usage_dep: {token_usage_dep}")
+                    dep_code = extract_code(dep_code)
+
+                    # Validate dependency alignment
+                    dependency_checks += 1
+                    is_valid, updated_main_code = await validator_function(
+                        main_code, dep_code, original_descriptions[path]
+                    )
+                    if is_valid:
+                        aligned_dependencies += 1
+                        logging.info(f"Dependency {dep_path} validated successfully without updating main code.")
+                    else:
+                        logging.warning(f"Main code updated for compatibility with {dep_path}")
+                        main_code = updated_main_code
+                        generated_files[path] = main_code
+                    generated_files[dep_path] = dep_code
+
+                    # Append iteration metrics
+                    iteration_metrics.append({
+                        "iteration": iteration,
+                        "type": "dependency",
+                        "token_usage": token_usage_dep,
+                        "execution_time": time.time() - iteration_start
+                    })
+                    iteration += 1  # Increment iteration counter
+                except Exception as e:
+                    logging.error(f"Error generating code: {e}")
+                    continue
+
+    # End execution timer
+    execution_time_total = time.time() - start_time
+
+    # Calculate total token usage
+    total_token_usage = sum([metric["token_usage"] for metric in iteration_metrics])
+
+    # Create metrics dictionary
+    metrics = {
+        "token_usage_total": total_token_usage,
+        "alignment": (aligned_dependencies / dependency_checks) * 100 if dependency_checks > 0 else 0,
+        "execution_time_total": execution_time_total,
+        "iterations": iteration_metrics
+    }
+
+    print("metrics see-saw", metrics)
+    return "Project built successfully!", generated_files, metrics
+
+
 
 
 def save_generated_files(generated_files: dict, base_path: str = "./generated"):

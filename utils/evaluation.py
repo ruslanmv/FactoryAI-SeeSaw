@@ -32,8 +32,8 @@ def generate_evaluation_csv(eval_path, metrics):
     # Data for token usage
     token_usage_data = [
         ["Method", "Token Usage (Tokens)"],
-        ["See-Saw", metrics["seesaw"]["token_usage"]],
-        ["Standard", metrics["standard"]["token_usage"]]
+        ["See-Saw", metrics["seesaw"]["token_usage_total"]],
+        ["Standard", metrics["standard"]["token_usage_total"]]
     ]
     write_csv(os.path.join(eval_path, "token_usage.csv"), token_usage_data[1:], token_usage_data[0])
 
@@ -48,10 +48,23 @@ def generate_evaluation_csv(eval_path, metrics):
     # Data for execution time
     execution_time_data = [
         ["Method", "Execution Time (Seconds)"],
-        ["See-Saw", metrics["seesaw"]["execution_time"]],
-        ["Standard", metrics["standard"]["execution_time"]]
+        ["See-Saw", metrics["seesaw"]["execution_time_total"]],
+        ["Standard", metrics["standard"]["execution_time_total"]]
     ]
     write_csv(os.path.join(eval_path, "execution_time.csv"), execution_time_data[1:], execution_time_data[0])
+
+    # Data for iterations (token usage and execution time per iteration)
+    tokens_data = [["Method", "Iteration", "Type", "Token Usage", "Execution Time"]]
+    for method, method_data in metrics.items():
+        for iteration in method_data["iterations"]:
+            tokens_data.append([
+                "See-Saw" if method == "seesaw" else "Standard",
+                iteration["iteration"],
+                iteration["type"],
+                iteration["token_usage"],
+                iteration["execution_time"]
+            ])
+    write_csv(os.path.join(eval_path, "tokens.csv"), tokens_data[1:], tokens_data[0])
 
 def main(metrics):
     """
@@ -63,14 +76,22 @@ def main(metrics):
     Example of metrics:
         metrics = {
             "seesaw": {
-                "token_usage": 600000,
+                "token_usage_total": 600000,
                 "alignment": 98,
-                "execution_time": 120,
+                "execution_time_total": 120,
+                "iterations": [
+                    {"iteration": 1, "type": "main", "token_usage": 2000, "execution_time": 10},
+                    {"iteration": 2, "type": "dependency", "token_usage": 1000, "execution_time": 10}
+                ]
             },
             "standard": {
-                "token_usage": 1000000,
+                "token_usage_total": 1000000,
                 "alignment": 75,
-                "execution_time": 115,
+                "execution_time_total": 115,
+                "iterations": [
+                    {"iteration": 1, "type": "main", "token_usage": 2000, "execution_time": 10},
+                    {"iteration": 2, "type": "dependency", "token_usage": 1000, "execution_time": 10}
+                ]
             }
         }
     """
@@ -82,14 +103,22 @@ if __name__ == "__main__":
     # Example metrics for testing
     example_metrics = {
         "seesaw": {
-            "token_usage": 600000,
+            "token_usage_total": 600000,
             "alignment": 98,
-            "execution_time": 120,
+            "execution_time_total": 120,
+            "iterations": [
+                {"iteration": 1, "type": "main", "token_usage": 2000, "execution_time": 10},
+                {"iteration": 2, "type": "dependency", "token_usage": 1000, "execution_time": 10}
+            ]
         },
         "standard": {
-            "token_usage": 1000000,
+            "token_usage_total": 1000000,
             "alignment": 75,
-            "execution_time": 115,
+            "execution_time_total": 115,
+            "iterations": [
+                {"iteration": 1, "type": "main", "token_usage": 2000, "execution_time": 10},
+                {"iteration": 2, "type": "dependency", "token_usage": 1000, "execution_time": 10}
+            ]
         }
     }
     main(example_metrics)

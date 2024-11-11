@@ -9,6 +9,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 from tools.magic import see_saw_mechanism, save_generated_files
+#from utils.evaluation import main as evaluation_main  # Import the evaluation script
 from utils.evaluation import main as evaluation
 
 # Load the API key from the .env file
@@ -244,7 +245,7 @@ async def build_project_old(df: pd.DataFrame):
 
 import time
 
-async def build_project(df: pd.DataFrame):
+async def build_project_new1(df: pd.DataFrame):
     """
     Build the project dynamically, updating dependencies and main files iteratively.
 
@@ -319,6 +320,102 @@ async def build_project(df: pd.DataFrame):
 
     return "Project built successfully!", metrics_standard
 
+import os
+import time
+import logging
+import pandas as pd
+
+async def build_project(df: pd.DataFrame):
+    """
+    Build the project dynamically, updating dependencies and main files iteratively.
+
+    Args:
+        df: DataFrame containing the project structure.
+
+    Returns:
+        Metrics for the standard approach.
+    """
+    global token_usage_standard  # Track total token usage
+    token_usage_standard = 0
+
+    generated_files = {}  # Store generated code for each file
+    pending_files = list(df.itertuples(index=False))
+
+    iteration_metrics = []  # List to store metrics for each iteration
+    iteration = 1  # Initialize iteration counter
+
+    # Start execution timer
+    start_time = time.time()
+
+    while pending_files:
+        file_info = pending_files.pop(0)
+        path, description = file_info.path, file_info.description
+
+        # Skip directories; ensure they exist
+        if path.endswith("/") or os.path.basename(path) == "":
+            os.makedirs(os.path.join("./", path.lstrip("./")), exist_ok=True)
+            continue
+
+        # Build dependency files first
+        dependencies = [dep for dep in generated_files.keys() if dep != path]
+        dependency_code = "\n".join([f"### Dependency: {dep}\n{generated_files[dep]}" for dep in dependencies])
+
+        # Create a prompt with the dependency code (if any)
+        prompt = (
+            f"You are building a project. The following dependencies have been written:\n\n"
+            f"{dependency_code}\n\n"
+            f"Now create or update the file at '{path}' based on its purpose:\n{description}\n\n"
+            f"If the file is a main application, ensure it calls all dependencies correctly. "
+            "Output only the code required for this file. Do not include explanations, comments, or additional context. "
+            "Simply return the raw code content."
+        )
+
+        # Extract the file extension
+        _, extension = os.path.splitext(path)
+
+        # Modify the prompt for specific extensions
+        if extension == ".md":
+            prompt += " Please create a professional README of this project."
+
+        # Generate code for the current file
+        logging.info(f"Generating file: {path}")
+        iteration_start_time = time.time()  # Start iteration timer
+        generated_code = await generate_code(prompt)
+        token_usage_single = len(generated_code.split())  # Token usage for this iteration
+        token_usage_standard += token_usage_single  # Update total token usage
+        logging.info(f"Token usage for iteration {iteration}: {token_usage_single}")
+
+        generated_code = extract_markdown_code(generated_code)
+        generated_files[path] = generated_code
+
+        # Save the generated code
+        save_file(path, generated_code)
+
+        # Append metrics for this iteration
+        iteration_metrics.append({
+            "iteration": iteration,
+            "type": "main" if "main" in description.lower() else "dependency",
+            "token_usage": token_usage_single,
+            "execution_time": time.time() - iteration_start_time
+        })
+
+        iteration += 1  # Increment iteration counter
+
+    # End execution timer
+    execution_time_total = time.time() - start_time
+
+    # Create the final metrics dictionary
+    metrics_standard = {
+        "token_usage_total": token_usage_standard,
+        "alignment": 100.0,  # Always 100% since no validation occurs
+        "execution_time_total": execution_time_total,
+        "iterations": iteration_metrics
+    }
+
+    # Log the final metrics
+    #logging.info(f"Final Metrics: {metrics_standard}")
+
+    return "Project built successfully!", metrics_standard
 
 
 
@@ -641,9 +738,26 @@ async def step_2(use_see_saw: bool):
     global token_usage_standard, dependency_checks, aligned_dependencies
 
     # Initialize metrics
+    #metrics = {
+    #    "seesaw": {"token_usage": 0, "alignment": 0, "execution_time": 0},
+    #    "standard": {"token_usage": 0, "alignment": 0, "execution_time": 0},
+    #}
+
+
+    # Initialize metrics
     metrics = {
-        "seesaw": {"token_usage": 0, "alignment": 0, "execution_time": 0},
-        "standard": {"token_usage": 0, "alignment": 0, "execution_time": 0},
+        "seesaw": {
+            "token_usage_total": 0,        # Total token usage
+            "alignment": 0,              # Alignment score
+            "execution_time_total": 0,    # Total execution time
+            "iterations": []              # List to hold iteration data
+        },
+        "standard": {
+            "token_usage_total": 0,
+            "alignment": 0,
+            "execution_time_total": 0,
+            "iterations": []
+        }
     }
 
     metadata_path = os.path.join(path_project, "metadata.pkl")
@@ -652,7 +766,7 @@ async def step_2(use_see_saw: bool):
 
     if use_see_saw:
         logging.info("See-Saw mechanism enabled.")
-        token_usage_standard, dependency_checks, aligned_dependencies = 0, 0, 0
+        #token_usage_standard, dependency_checks, aligned_dependencies = 0, 0, 0
 
         # Run the See-Saw mechanism
         try:
@@ -755,6 +869,30 @@ def step_4():
     except Exception as e:
         # If zipping fails, return an error message and None for the file path
         return f"Error in zipping the project: {str(e)}", None
+
+# Define the Step 5 function
+def step_5(metrics):
+    """
+    Perform evaluation and save metrics to CSV files.
+
+    Args:
+        metrics: The metrics dictionary to save.
+
+    Returns:
+        Status message of the evaluation process.
+    """
+    try:
+        from utils.evaluation import main as evaluation_main  # Import the evaluation script
+        logging.info("Saving metrics for evaluation...")
+        evaluation_main(metrics)  # Call the evaluation function
+        logging.info("Metrics saved successfully.")
+        return "Metrics saved successfully!"
+    except Exception as e:
+        logging.error(f"Error saving metrics: {e}")
+        return f"Error while saving metrics for evaluation: {str(e)}"
+
+
+
 
 import pandas as pd
 from utils.display_and_store_directory_content import display_and_store_directory_content
@@ -859,6 +997,7 @@ def app():
         with gr.Tab("Step 2: Generate Files"):
             # Checkbox to enable/disable See-Saw Mechanism
             use_see_saw = gr.Checkbox(label="Enable See-Saw Mechanism", value=False)
+            save_metrics = gr.Checkbox(label="Enable Save Metrics", value=False)
             
             # Button to trigger file generation
             generate_files_button = gr.Button("Generate Project Files")
@@ -873,28 +1012,45 @@ def app():
             metrics_execution_time = gr.Textbox(label="Execution Time (Seconds)", lines=1, interactive=False)
 
             # Link button to step_2
-            def run_step_2(use_see_saw):
+            def run_step_2(use_see_saw,save_metrics=False):
                 # Call step_2 and return metrics
                 import asyncio
-                metrics, logs = asyncio.run(step_2(use_see_saw))
+                metrics, logs = asyncio.run(step_2(use_see_saw))                 
                 if use_see_saw:
                     metric_data = metrics["seesaw"]
                 else:
                     metric_data = metrics["standard"]
+
+                #save_metrics=True
+                if save_metrics:
+                    try:
+                        logging.info("Saving metrics for evaluation...")
+                        evaluation(metrics)  # Call the evaluation function
+                        logging.info("Metrics saved successfully.")
+                    except Exception as e:
+                        logging.error(f"Error saving metrics: {e}")
+
                 return (
                     "Files generated successfully!" ,
                     logs,
-                    metric_data["token_usage"],
+                    metric_data["token_usage_total"],
                     metric_data["alignment"],
-                    metric_data["execution_time"],
+                    metric_data["execution_time_total"],
                 )
 
             # Connect button to the updated function
             generate_files_button.click(
                 run_step_2,
-                inputs=[use_see_saw],
+                inputs=[use_see_saw,save_metrics],
                 outputs=[files_output, log_output, metrics_token_usage, metrics_alignment, metrics_execution_time],
             )
+
+
+  
+
+
+
+
 
 
         with gr.Tab("Step 3: Validate and Display Files"):
@@ -981,7 +1137,7 @@ def app():
 if __name__ == "__main__":
     import asyncio
     import logging
-    dev = True
+    dev = False
     if dev:
         try:
             # Step 1: Generate the Project Tree
