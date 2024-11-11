@@ -1,10 +1,3 @@
-To complete your project setup, it is essential to create a `.gitignore` file that specifies which files and directories Git should ignore. This helps keep your repository clean and focused on the source code, avoiding clutter from automatically generated files, local development artifacts, and sensitive data that should not be included in version control.
-
-Here's a suitable `.gitignore` for your Gradio application:
-
-### `.gitignore`
-
-```plaintext
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -83,24 +76,7 @@ Thumbs.db
 
 # Others
 *.swp
-```
 
-### Explanation:
-
-- **Python Artifacts**: Ignores Python bytecode files (e.g., `__pycache__`) and compiled Python files (`*.pyc`, `*.pyo`, etc.).
-- **Distribution/Packaging**: Ignores directories and files created when packaging Python projects (e.g., `build/`, `dist/`).
-- **Virtual Environments**: Ignores virtual environment directories (e.g., `venv/`, `.env/`), which might be specific to your local development setup.
-- **Gradio**: While Gradio itself may not generate specific files to be ignored, having a placeholder ensures any potentially hidden artifacts can be ignored.
-- **Operating System Files**: Ignores system-specific files like `.DS_Store` on macOS and `Thumbs.db` on Windows.
-- **IDE and Editor Configurations**: Ignores configurations and artifacts created by various IDEs and editors, such as `.vscode/` and `.idea/`.
-- **Config Files**: Ignores environment variable files like `.env`, which may contain sensitive information.
-
-### How to Use:
-
-1. Place this text in a file named `.gitignore` at the root of your repository.
-2. When you add or commit changes with Git, any files or directories matching these patterns will be ignored.
-
-This setup helps ensure that your project repository contains only the necessary code and configuration files, making it easier to manage and less prone to exposing sensitive information. Adjust this template as needed to fit any specific requirements or tools you use in your project.
 /generated
 /backup
 /extraction
