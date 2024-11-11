@@ -58,7 +58,7 @@ The workflow alternates between See and Saw phases, iteratively refining the pro
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-repository/factoryai-seesaw.git
+   git clone https://github.com/ruslanmv/factoryai-seesaw.git
    cd factoryai-seesaw
    ```
 
