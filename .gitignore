@@ -80,4 +80,4 @@ Thumbs.db
 /generated
 /backup
 /extraction
-*.zip
+#*.zip
