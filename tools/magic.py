@@ -42,7 +42,7 @@ client_openai = OpenAI(api_key=OPENAI_API_KEY)
 
 # --- See-Saw Mechanism Functions ---
 
-async def generate_main_or_dependency(prompt: str, use_openai=True) -> str:
+async def generate_main_or_dependency_old(prompt: str, use_openai=True) -> str:
     """
     Generate code using the preferred API (OpenAI or HuggingFace) based on the prompt.
     """
@@ -66,6 +66,39 @@ async def generate_main_or_dependency(prompt: str, use_openai=True) -> str:
     except Exception as e:
         logging.error(f"Error generating code: {e}")
         return f"Error: {e}"
+
+async def generate_main_or_dependency(prompt: str, use_openai=True) -> str:
+    """
+    Generate code using the preferred API (OpenAI or HuggingFace) based on the prompt.
+    """
+    global token_usage  # Add a global token usage tracker
+    try:
+        if use_openai:
+            completion = client_openai.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": "You are a code generator."},
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            # Track token usage from OpenAI's response
+            token_usage += completion.usage.total_tokens
+            return completion.choices[0].message.content.strip()
+        else:
+            response = await client_hf.post(
+                model="codellama/CodeLlama-34b-Instruct-hf",
+                inputs=prompt,
+                parameters={"max_new_tokens": 512, "return_full_text": False},
+            )
+            # Estimate token usage for Hugging Face (adjust as needed)
+            token_usage += len(prompt.split()) + len(response.get("generated_text", "").split())
+            return response.get("generated_text", "").strip()
+    except Exception as e:
+        logging.error(f"Error generating code: {e}")
+        return f"Error: {e}"
+
+
+
 
 def extract_code_old(llm_output: str) -> str:
     """
@@ -102,7 +135,7 @@ def extract_code(llm_output: str) -> str:
         return llm_output.strip()
 
 
-async def validator_function(main_code: str, dependency_code: str, original_description: str) -> (bool, str):
+async def validator_function_old(main_code: str, dependency_code: str, original_description: str) -> (bool, str):
     """
     Validate compatibility of main code and dependency. Return True if compatible, else False with suggested main code.
     """
@@ -124,7 +157,36 @@ async def validator_function(main_code: str, dependency_code: str, original_desc
     logging.warning(f"Validation response error: {response}")
     return False, f"Error in validation response: {response}"
 
-async def see_saw_mechanism(project_tree: list):
+async def validator_function(main_code: str, dependency_code: str, original_description: str) -> (bool, str):
+    """
+    Validate compatibility of main code and dependency. Return True if compatible, else False with suggested main code.
+    """
+    global dependency_checks, aligned_dependencies
+    dependency_checks += 1  # Increment the total checks
+    prompt = (
+        f"The following is the original project description:\n\n{original_description}\n\n"
+        f"The following is the main code:\n\n{main_code}\n\n"
+        f"The following is the dependency code:\n\n{dependency_code}\n\n"
+        "Check compatibility. Respond 'True' if compatible, or 'False' followed by the corrected main code."
+        "Ensure that the corrected main code adheres strictly to the original project description."
+        "Do not include comments or explanations, and do not wrap the code in triple backticks or any other delimiters."
+        "Only return the raw code content."
+    )
+    response = await generate_main_or_dependency(prompt)
+    if response.startswith("True"):
+        aligned_dependencies += 1  # Increment aligned dependencies count
+        return True, main_code
+    elif response.startswith("False"):
+        corrected_code = response[5:].strip()
+        return False, corrected_code
+    logging.warning(f"Validation response error: {response}")
+    return False, f"Error in validation response: {response}"
+
+
+
+
+
+async def see_saw_mechanism_old(project_tree: list):
     """
     Implement the See-Saw mechanism for generating main and dependency files.
     """
@@ -167,6 +229,180 @@ async def see_saw_mechanism(project_tree: list):
                     logging.info(f"Dependency {dep_path} validated successfully without updating main code.")
                 generated_files[dep_path] = dep_code
     return generated_files
+
+import time
+async def see_saw_mechanism_partial(project_tree: list):
+    """
+    Implement the See-Saw mechanism for generating main and dependency files.
+    """
+    import time
+
+    # Initialize metrics
+    global token_usage, dependency_checks, aligned_dependencies
+    token_usage = 0
+    dependency_checks = 0
+    aligned_dependencies = 0
+
+    generated_files = {}
+    original_descriptions = {item['path']: item['description'] for item in project_tree}
+
+    # Start timing the process
+    start_time = time.time()
+
+    for item in project_tree:
+        path, description = item['path'], item['description']
+
+        if "main" in description.lower():
+            logging.info(f"Generating main file: {path}")
+            try:
+                main_prompt = (
+                    f"Generate the main file for the project:\n{description}\n\n"
+                    "Do not include comments or explanations. Only return the raw code content."
+                )
+                main_code = await generate_main_or_dependency(main_prompt)
+
+
+
+                
+                token_usage += len(main_prompt.split())  # Track token usage
+                main_code = extract_code(main_code)
+                generated_files[path] = main_code
+            except Exception as e:
+                logging.error(f"Error generating code: {e}")
+                continue
+
+            dependencies = [dep for dep in project_tree if dep['path'] != path]
+            for dep in dependencies:
+                dep_path, dep_desc = dep['path'], dep['description']
+                logging.info(f"Generating dependency: {dep_path}")
+                try:
+                    dep_prompt = (
+                        f"This is the main code:\n\n{main_code}\n\n"
+                        f"Generate the dependency code for the file '{dep_path}':\n{dep_desc}\n\n"
+                        "Do not include comments or explanations. Only return the raw code content."
+                    )
+                    dep_code = await generate_main_or_dependency(dep_prompt)
+                    token_usage += len(dep_prompt.split())  # Track token usage
+                    dep_code = extract_code(dep_code)
+
+                    # Validate dependency alignment
+                    dependency_checks += 1
+                    is_valid, updated_main_code = await validator_function(
+                        main_code, dep_code, original_descriptions[path]
+                    )
+                    if is_valid:
+                        aligned_dependencies += 1
+                        logging.info(f"Dependency {dep_path} validated successfully without updating main code.")
+                    else:
+                        logging.warning(f"Main code updated for compatibility with {dep_path}")
+                        main_code = updated_main_code
+                        generated_files[path] = main_code
+                    generated_files[dep_path] = dep_code
+                except Exception as e:
+                    logging.error(f"Error generating code: {e}")
+                    continue
+
+    # End timing and calculate execution time
+    execution_time = time.time() - start_time
+
+    return generated_files, execution_time
+
+
+import time
+import logging
+
+async def see_saw_mechanism(project_tree: list):
+    """
+    Implement the See-Saw mechanism for generating main and dependency files.
+    """
+    # Initialize metrics
+    global token_usage, dependency_checks, aligned_dependencies
+    token_usage = 0
+    dependency_checks = 0
+    aligned_dependencies = 0
+
+    generated_files = {}
+    original_descriptions = {item['path']: item['description'] for item in project_tree}
+    total_token_usage = []  # List to track all token usages
+
+    # Start timing the process
+    start_time = time.time()
+
+    for item in project_tree:
+        path, description = item['path'], item['description']
+
+        if "main" in description.lower():
+            logging.info(f"Generating main file: {path}")
+            try:
+                main_prompt = (
+                    f"Generate the main file for the project:\n{description}\n\n"
+                    "Do not include comments or explanations. Only return the raw code content."
+                )
+                main_code = await generate_main_or_dependency(main_prompt)
+
+                # Track token usage
+                token_usage_main = len(main_code.split())
+                logging.info(f"token_usage_main: {token_usage_main}")
+                total_token_usage.append(token_usage_main)
+                
+                main_code = extract_code(main_code)
+                generated_files[path] = main_code
+            except Exception as e:
+                logging.error(f"Error generating code: {e}")
+                continue
+
+            dependencies = [dep for dep in project_tree if dep['path'] != path]
+            for dep in dependencies:
+                dep_path, dep_desc = dep['path'], dep['description']
+                logging.info(f"Generating dependency: {dep_path}")
+                try:
+                    dep_prompt = (
+                        f"This is the main code:\n\n{main_code}\n\n"
+                        f"Generate the dependency code for the file '{dep_path}':\n{dep_desc}\n\n"
+                        "Do not include comments or explanations. Only return the raw code content."
+                    )
+                    dep_code = await generate_main_or_dependency(dep_prompt)
+                    
+                    # Track token usage
+                    token_usage_dep = len(dep_code.split())
+                    logging.info(f"token_usage_dep: {token_usage_dep}")
+                    total_token_usage.append(token_usage_dep)
+
+                    dep_code = extract_code(dep_code)
+
+                    # Validate dependency alignment
+                    dependency_checks += 1
+                    is_valid, updated_main_code = await validator_function(
+                        main_code, dep_code, original_descriptions[path]
+                    )
+                    if is_valid:
+                        aligned_dependencies += 1
+                        logging.info(f"Dependency {dep_path} validated successfully without updating main code.")
+                    else:
+                        logging.warning(f"Main code updated for compatibility with {dep_path}")
+                        main_code = updated_main_code
+                        generated_files[path] = main_code
+                    generated_files[dep_path] = dep_code
+                except Exception as e:
+                    logging.error(f"Error generating code: {e}")
+                    continue
+
+    # End execution timer
+    execution_time = time.time() - start_time
+
+    # Calculate total token usage
+    total_token_value = sum(total_token_usage)
+
+    # Create metrics dictionary
+    metrics = {
+            "token_usage": total_token_value,
+            "alignment": (aligned_dependencies / dependency_checks) * 100 if dependency_checks > 0 else 0,
+            "execution_time": execution_time,
+        
+    }
+    print("metrics see-saw",metrics)
+    return "Project built successfully!", generated_files, metrics
+
 
 def save_generated_files(generated_files: dict, base_path: str = "./generated"):
     """
