@@ -104,3 +104,4 @@ This setup helps ensure that your project repository contains only the necessary
 /generated
 /backup
 /extraction
+*.zip

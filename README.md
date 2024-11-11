@@ -102,14 +102,18 @@ The workflow alternates between See and Saw phases, iteratively refining the pro
 Example of the application interface:
 
 #### Project Tree Generation
-![Project Tree](./assets/2024-11-10-00-17-10.png)
+
+![Project Tree](./assets/2024-11-11-12-26-30.png)
+
+#### Build Generation
+![Generate Files](./assets/2024-11-11-12-27-15.png)
+
 
 #### File Validation
-![Validation](./assets/2024-11-09-23-54-10.png)
+![Validation](./assets/2024-11-11-12-28-17.png)
 
 #### Containerization and Deployment
 ![Containerization](./assets/2024-11-10-00-13-19.png)
-
 ---
 
 ## Workflow Diagram
