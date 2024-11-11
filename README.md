@@ -141,7 +141,7 @@ graph TD
     subgraph Output[Output]
         ProjectFolder[Generated Project Folder]
         Dockerfile[Dockerfile]
-        ZipFile[Packaged Project (ZIP)]
+        ZipFile[Packaged Project ZIP]
     end
 
     Gradio --> CoreFunctions
