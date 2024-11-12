@@ -1,0 +1,481 @@
+2024-11-12 20:48:40,951 - INFO - Log file cleaned successfully.
+2024-11-12 20:50:02,339 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:01,118 - INFO - See-Saw mechanism enabled.
+2024-11-12 20:51:01,118 - INFO - Generating main file: ./generated\frontend/src/components/App.js
+2024-11-12 20:51:03,749 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:03,750 - INFO - token_usage_main: 23
+2024-11-12 20:51:03,754 - INFO - Generating dependency: ./generated\frontend/src/index.js
+2024-11-12 20:51:05,091 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:05,092 - INFO - token_usage_dep: 23
+2024-11-12 20:51:05,827 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:05,829 - INFO - Dependency ./generated\frontend/src/index.js validated successfully without updating main code.
+2024-11-12 20:51:05,829 - INFO - Generating dependency: ./generated\frontend/src/components/Home.js
+2024-11-12 20:51:07,730 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:07,731 - INFO - token_usage_dep: 36
+2024-11-12 20:51:10,742 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:10,742 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Home.js
+2024-11-12 20:51:10,743 - INFO - Generating dependency: ./generated\frontend/src/components/ProductList.js
+2024-11-12 20:51:13,169 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:13,170 - INFO - token_usage_dep: 56
+2024-11-12 20:51:13,497 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:13,498 - INFO - Dependency ./generated\frontend/src/components/ProductList.js validated successfully without updating main code.
+2024-11-12 20:51:13,498 - INFO - Generating dependency: ./generated\frontend/src/components/ProductDetail.js
+2024-11-12 20:51:15,286 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:15,287 - INFO - token_usage_dep: 34
+2024-11-12 20:51:21,464 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:21,465 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/ProductDetail.js
+2024-11-12 20:51:21,469 - INFO - Generating dependency: ./generated\frontend/src/components/Cart.js
+2024-11-12 20:51:26,744 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:26,746 - INFO - token_usage_dep: 57
+2024-11-12 20:51:31,506 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:31,507 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Cart.js
+2024-11-12 20:51:31,510 - INFO - Generating dependency: ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 20:51:35,501 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:35,503 - INFO - token_usage_dep: 73
+2024-11-12 20:51:39,376 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:39,378 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 20:51:39,379 - INFO - Generating dependency: ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 20:51:45,767 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:45,769 - INFO - token_usage_dep: 102
+2024-11-12 20:51:50,515 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:50,516 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 20:51:50,516 - INFO - Generating dependency: ./generated\frontend/public/index.html
+2024-11-12 20:51:56,807 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:51:56,808 - INFO - token_usage_dep: 24
+2024-11-12 20:52:00,039 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:00,040 - WARNING - Main code updated for compatibility with ./generated\frontend/public/index.html
+2024-11-12 20:52:00,041 - INFO - Generating dependency: ./generated\backend/app.js
+2024-11-12 20:52:04,273 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:04,274 - INFO - token_usage_dep: 98
+2024-11-12 20:52:08,949 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:08,950 - WARNING - Main code updated for compatibility with ./generated\backend/app.js
+2024-11-12 20:52:08,951 - INFO - Generating dependency: ./generated\backend/routes/index.js
+2024-11-12 20:52:11,428 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:11,429 - INFO - token_usage_dep: 31
+2024-11-12 20:52:20,908 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:20,909 - WARNING - Main code updated for compatibility with ./generated\backend/routes/index.js
+2024-11-12 20:52:20,909 - INFO - Generating dependency: ./generated\backend/routes/products.js
+2024-11-12 20:52:22,502 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:22,503 - INFO - token_usage_dep: 27
+2024-11-12 20:52:31,961 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:31,961 - WARNING - Main code updated for compatibility with ./generated\backend/routes/products.js
+2024-11-12 20:52:31,963 - INFO - Generating dependency: ./generated\backend/routes/auth.js
+2024-11-12 20:52:37,641 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:37,643 - INFO - token_usage_dep: 161
+2024-11-12 20:52:50,016 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:50,017 - WARNING - Main code updated for compatibility with ./generated\backend/routes/auth.js
+2024-11-12 20:52:50,017 - INFO - Generating dependency: ./generated\backend/models/User.js
+2024-11-12 20:52:55,309 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:52:55,310 - INFO - token_usage_dep: 91
+2024-11-12 20:53:07,216 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:53:07,217 - WARNING - Main code updated for compatibility with ./generated\backend/models/User.js
+2024-11-12 20:53:07,218 - INFO - Generating dependency: ./generated\backend/models/Product.js
+2024-11-12 20:53:08,844 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:53:08,845 - INFO - token_usage_dep: 46
+2024-11-12 20:53:25,504 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:53:25,505 - WARNING - Main code updated for compatibility with ./generated\backend/models/Product.js
+2024-11-12 20:53:25,506 - INFO - Generating dependency: ./generated\backend/controllers/productController.js
+2024-11-12 20:53:37,897 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:53:37,898 - INFO - token_usage_dep: 205
+2024-11-12 20:53:47,659 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:53:47,660 - WARNING - Main code updated for compatibility with ./generated\backend/controllers/productController.js
+2024-11-12 20:53:47,661 - INFO - Generating dependency: ./generated\backend/controllers/authController.js
+2024-11-12 20:53:55,538 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:53:55,539 - INFO - token_usage_dep: 166
+2024-11-12 20:54:07,332 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:54:07,333 - WARNING - Main code updated for compatibility with ./generated\backend/controllers/authController.js
+2024-11-12 20:54:07,334 - INFO - Generating dependency: ./generated\backend/config/db.js
+2024-11-12 20:54:09,730 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:54:09,731 - INFO - token_usage_dep: 41
+2024-11-12 20:54:23,589 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:54:23,590 - WARNING - Main code updated for compatibility with ./generated\backend/config/db.js
+2024-11-12 20:54:23,591 - INFO - Generating dependency: ./generated\backend/middleware/authMiddleware.js
+2024-11-12 20:54:26,227 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:54:26,228 - INFO - token_usage_dep: 55
+2024-11-12 20:54:38,751 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:54:38,752 - WARNING - Main code updated for compatibility with ./generated\backend/middleware/authMiddleware.js
+2024-11-12 20:54:38,752 - INFO - Generating dependency: ./generated\database/init.js
+2024-11-12 20:54:49,384 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:54:49,385 - INFO - token_usage_dep: 108
+2024-11-12 20:55:03,090 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:55:03,092 - WARNING - Main code updated for compatibility with ./generated\database/init.js
+2024-11-12 20:55:03,094 - INFO - Generating dependency: ./generated\auth/passport.js
+2024-11-12 20:55:10,663 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:55:10,664 - INFO - token_usage_dep: 120
+2024-11-12 20:55:19,963 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:55:19,964 - WARNING - Main code updated for compatibility with ./generated\auth/passport.js
+2024-11-12 20:55:19,964 - INFO - Generating dependency: ./generated\tests/frontend/App.test.js
+2024-11-12 20:55:40,320 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:55:40,321 - INFO - token_usage_dep: 229
+2024-11-12 20:55:48,172 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:55:48,174 - WARNING - Main code updated for compatibility with ./generated\tests/frontend/App.test.js
+2024-11-12 20:55:48,174 - INFO - Generating dependency: ./generated\tests/backend/productController.test.js
+2024-11-12 20:56:03,801 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:56:03,802 - INFO - token_usage_dep: 176
+2024-11-12 20:56:15,930 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:56:15,931 - WARNING - Main code updated for compatibility with ./generated\tests/backend/productController.test.js
+2024-11-12 20:56:15,932 - INFO - Generating dependency: ./generated\tests/backend/authController.test.js
+2024-11-12 20:56:27,709 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:56:27,710 - INFO - token_usage_dep: 185
+2024-11-12 20:56:40,223 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:56:40,224 - WARNING - Main code updated for compatibility with ./generated\tests/backend/authController.test.js
+2024-11-12 20:56:40,224 - INFO - Generating dependency: ./generated\tests/integration/productRoutes.test.js
+2024-11-12 20:56:51,605 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:56:51,606 - INFO - token_usage_dep: 146
+2024-11-12 20:57:04,449 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:57:04,450 - WARNING - Main code updated for compatibility with ./generated\tests/integration/productRoutes.test.js
+2024-11-12 20:57:04,451 - INFO - Generating dependency: ./generated\tests/integration/authRoutes.test.js
+2024-11-12 20:57:29,237 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:57:29,238 - INFO - token_usage_dep: 216
+2024-11-12 20:57:40,915 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:57:40,917 - WARNING - Main code updated for compatibility with ./generated\tests/integration/authRoutes.test.js
+2024-11-12 20:57:40,917 - INFO - Generating dependency: ./generated\deployment/ci.yml
+2024-11-12 20:57:57,721 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:57:57,722 - INFO - token_usage_dep: 100
+2024-11-12 20:58:16,702 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:58:16,704 - WARNING - Main code updated for compatibility with ./generated\deployment/ci.yml
+2024-11-12 20:58:16,704 - INFO - Generating dependency: ./generated\deployment/cd.yml
+2024-11-12 20:58:25,668 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:58:25,669 - INFO - token_usage_dep: 61
+2024-11-12 20:58:38,884 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:58:38,885 - WARNING - Main code updated for compatibility with ./generated\deployment/cd.yml
+2024-11-12 20:58:38,886 - INFO - Generating dependency: ./generated\deployment/Dockerfile
+2024-11-12 20:58:46,192 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:58:46,194 - INFO - token_usage_dep: 107
+2024-11-12 20:58:58,858 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:58:58,860 - WARNING - Main code updated for compatibility with ./generated\deployment/Dockerfile
+2024-11-12 20:58:58,860 - INFO - Generating dependency: ./generated\deployment/docker-compose.yml
+2024-11-12 20:59:01,935 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:01,936 - INFO - token_usage_dep: 67
+2024-11-12 20:59:11,989 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:11,990 - WARNING - Main code updated for compatibility with ./generated\deployment/docker-compose.yml
+2024-11-12 20:59:11,991 - INFO - Generating main file: ./generated\backend/app.js
+2024-11-12 20:59:13,420 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:13,421 - INFO - token_usage_main: 48
+2024-11-12 20:59:13,422 - INFO - Generating dependency: ./generated\frontend/src/index.js
+2024-11-12 20:59:14,576 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:14,577 - INFO - token_usage_dep: 23
+2024-11-12 20:59:16,857 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:16,859 - WARNING - Main code updated for compatibility with ./generated\frontend/src/index.js
+2024-11-12 20:59:16,859 - INFO - Generating dependency: ./generated\frontend/src/components/App.js
+2024-11-12 20:59:18,159 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:18,160 - INFO - token_usage_dep: 24
+2024-11-12 20:59:20,622 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:20,623 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/App.js
+2024-11-12 20:59:20,624 - INFO - Generating dependency: ./generated\frontend/src/components/Home.js
+2024-11-12 20:59:22,268 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:22,269 - INFO - token_usage_dep: 36
+2024-11-12 20:59:23,885 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:23,886 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Home.js
+2024-11-12 20:59:23,887 - INFO - Generating dependency: ./generated\frontend/src/components/ProductList.js
+2024-11-12 20:59:26,950 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:26,952 - INFO - token_usage_dep: 67
+2024-11-12 20:59:29,731 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:29,732 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/ProductList.js
+2024-11-12 20:59:29,733 - INFO - Generating dependency: ./generated\frontend/src/components/ProductDetail.js
+2024-11-12 20:59:34,944 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:34,945 - INFO - token_usage_dep: 34
+2024-11-12 20:59:40,155 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:40,156 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/ProductDetail.js
+2024-11-12 20:59:40,156 - INFO - Generating dependency: ./generated\frontend/src/components/Cart.js
+2024-11-12 20:59:48,287 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:48,288 - INFO - token_usage_dep: 81
+2024-11-12 20:59:52,283 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:52,284 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Cart.js
+2024-11-12 20:59:52,285 - INFO - Generating dependency: ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 20:59:57,031 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 20:59:57,032 - INFO - token_usage_dep: 124
+2024-11-12 21:00:17,121 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:17,122 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 21:00:17,123 - INFO - Generating dependency: ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 21:00:21,618 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:21,619 - INFO - token_usage_dep: 93
+2024-11-12 21:00:30,472 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:30,473 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 21:00:30,474 - INFO - Generating dependency: ./generated\frontend/public/index.html
+2024-11-12 21:00:32,123 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:32,124 - INFO - token_usage_dep: 23
+2024-11-12 21:00:39,194 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:39,195 - WARNING - Main code updated for compatibility with ./generated\frontend/public/index.html
+2024-11-12 21:00:39,196 - INFO - Generating dependency: ./generated\backend/routes/index.js
+2024-11-12 21:00:42,412 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:42,413 - INFO - token_usage_dep: 92
+2024-11-12 21:00:45,209 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:45,210 - WARNING - Main code updated for compatibility with ./generated\backend/routes/index.js
+2024-11-12 21:00:45,211 - INFO - Generating dependency: ./generated\backend/routes/products.js
+2024-11-12 21:00:52,177 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:52,178 - INFO - token_usage_dep: 176
+2024-11-12 21:00:52,641 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:00:52,642 - INFO - Dependency ./generated\backend/routes/products.js validated successfully without updating main code.
+2024-11-12 21:00:52,643 - INFO - Generating dependency: ./generated\backend/routes/auth.js
+2024-11-12 21:01:00,493 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:00,494 - INFO - token_usage_dep: 84
+2024-11-12 21:01:00,897 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:00,898 - INFO - Dependency ./generated\backend/routes/auth.js validated successfully without updating main code.
+2024-11-12 21:01:00,899 - INFO - Generating dependency: ./generated\backend/models/User.js
+2024-11-12 21:01:03,543 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:03,544 - INFO - token_usage_dep: 52
+2024-11-12 21:01:06,336 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:06,337 - WARNING - Main code updated for compatibility with ./generated\backend/models/User.js
+2024-11-12 21:01:06,338 - INFO - Generating dependency: ./generated\backend/models/Product.js
+2024-11-12 21:01:08,074 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:08,075 - INFO - token_usage_dep: 44
+2024-11-12 21:01:17,165 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:17,166 - WARNING - Main code updated for compatibility with ./generated\backend/models/Product.js
+2024-11-12 21:01:17,167 - INFO - Generating dependency: ./generated\backend/controllers/productController.js
+2024-11-12 21:01:25,364 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:25,365 - INFO - token_usage_dep: 188
+2024-11-12 21:01:28,801 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:28,802 - WARNING - Main code updated for compatibility with ./generated\backend/controllers/productController.js
+2024-11-12 21:01:28,802 - INFO - Generating dependency: ./generated\backend/controllers/authController.js
+2024-11-12 21:01:34,619 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:34,620 - INFO - token_usage_dep: 149
+2024-11-12 21:01:39,169 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:39,170 - WARNING - Main code updated for compatibility with ./generated\backend/controllers/authController.js
+2024-11-12 21:01:39,171 - INFO - Generating dependency: ./generated\backend/config/db.js
+2024-11-12 21:01:41,247 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:41,248 - INFO - token_usage_dep: 40
+2024-11-12 21:01:45,456 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:45,457 - WARNING - Main code updated for compatibility with ./generated\backend/config/db.js
+2024-11-12 21:01:45,458 - INFO - Generating dependency: ./generated\backend/middleware/authMiddleware.js
+2024-11-12 21:01:47,836 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:47,837 - INFO - token_usage_dep: 53
+2024-11-12 21:01:51,954 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:51,955 - WARNING - Main code updated for compatibility with ./generated\backend/middleware/authMiddleware.js
+2024-11-12 21:01:51,955 - INFO - Generating dependency: ./generated\database/init.js
+2024-11-12 21:01:55,157 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:55,158 - INFO - token_usage_dep: 99
+2024-11-12 21:01:59,468 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:01:59,469 - WARNING - Main code updated for compatibility with ./generated\database/init.js
+2024-11-12 21:01:59,470 - INFO - Generating dependency: ./generated\auth/passport.js
+2024-11-12 21:02:05,780 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:05,782 - INFO - token_usage_dep: 94
+2024-11-12 21:02:10,970 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:10,971 - WARNING - Main code updated for compatibility with ./generated\auth/passport.js
+2024-11-12 21:02:10,971 - INFO - Generating dependency: ./generated\tests/frontend/App.test.js
+2024-11-12 21:02:14,298 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:14,299 - INFO - token_usage_dep: 51
+2024-11-12 21:02:18,524 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:18,526 - WARNING - Main code updated for compatibility with ./generated\tests/frontend/App.test.js
+2024-11-12 21:02:18,526 - INFO - Generating dependency: ./generated\tests/backend/productController.test.js
+2024-11-12 21:02:29,975 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:29,976 - INFO - token_usage_dep: 204
+2024-11-12 21:02:34,211 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:34,212 - WARNING - Main code updated for compatibility with ./generated\tests/backend/productController.test.js
+2024-11-12 21:02:34,213 - INFO - Generating dependency: ./generated\tests/backend/authController.test.js
+2024-11-12 21:02:43,417 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:43,418 - INFO - token_usage_dep: 166
+2024-11-12 21:02:47,237 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:47,238 - WARNING - Main code updated for compatibility with ./generated\tests/backend/authController.test.js
+2024-11-12 21:02:47,239 - INFO - Generating dependency: ./generated\tests/integration/productRoutes.test.js
+2024-11-12 21:02:56,183 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:02:56,184 - INFO - token_usage_dep: 197
+2024-11-12 21:03:01,307 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:01,309 - WARNING - Main code updated for compatibility with ./generated\tests/integration/productRoutes.test.js
+2024-11-12 21:03:01,309 - INFO - Generating dependency: ./generated\tests/integration/authRoutes.test.js
+2024-11-12 21:03:11,601 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:11,602 - INFO - token_usage_dep: 140
+2024-11-12 21:03:15,806 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:15,807 - WARNING - Main code updated for compatibility with ./generated\tests/integration/authRoutes.test.js
+2024-11-12 21:03:15,808 - INFO - Generating dependency: ./generated\deployment/ci.yml
+2024-11-12 21:03:23,840 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:23,841 - INFO - token_usage_dep: 94
+2024-11-12 21:03:30,274 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:30,275 - WARNING - Main code updated for compatibility with ./generated\deployment/ci.yml
+2024-11-12 21:03:30,277 - INFO - Generating dependency: ./generated\deployment/cd.yml
+2024-11-12 21:03:38,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:38,770 - INFO - token_usage_dep: 98
+2024-11-12 21:03:43,537 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:43,539 - WARNING - Main code updated for compatibility with ./generated\deployment/cd.yml
+2024-11-12 21:03:43,539 - INFO - Generating dependency: ./generated\deployment/Dockerfile
+2024-11-12 21:03:44,858 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:44,859 - INFO - token_usage_dep: 20
+2024-11-12 21:03:49,122 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:49,124 - WARNING - Main code updated for compatibility with ./generated\deployment/Dockerfile
+2024-11-12 21:03:49,124 - INFO - Generating dependency: ./generated\deployment/docker-compose.yml
+2024-11-12 21:03:50,773 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:50,774 - INFO - token_usage_dep: 31
+2024-11-12 21:03:55,091 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:55,092 - WARNING - Main code updated for compatibility with ./generated\deployment/docker-compose.yml
+2024-11-12 21:03:55,093 - INFO - Generating main file: ./generated\backend/routes/index.js
+2024-11-12 21:03:58,094 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:58,095 - INFO - token_usage_main: 41
+2024-11-12 21:03:58,096 - INFO - Generating dependency: ./generated\frontend/src/index.js
+2024-11-12 21:03:59,191 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:03:59,193 - INFO - token_usage_dep: 21
+2024-11-12 21:04:01,218 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:01,219 - WARNING - Main code updated for compatibility with ./generated\frontend/src/index.js
+2024-11-12 21:04:01,220 - INFO - Generating dependency: ./generated\frontend/src/components/App.js
+2024-11-12 21:04:08,069 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:08,070 - INFO - token_usage_dep: 139
+2024-11-12 21:04:10,555 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:10,556 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/App.js
+2024-11-12 21:04:10,557 - INFO - Generating dependency: ./generated\frontend/src/components/Home.js
+2024-11-12 21:04:11,766 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:11,767 - INFO - token_usage_dep: 33
+2024-11-12 21:04:12,477 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:12,478 - INFO - Dependency ./generated\frontend/src/components/Home.js validated successfully without updating main code.
+2024-11-12 21:04:12,478 - INFO - Generating dependency: ./generated\frontend/src/components/ProductList.js
+2024-11-12 21:04:15,728 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:15,729 - INFO - token_usage_dep: 62
+2024-11-12 21:04:19,431 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:19,432 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/ProductList.js
+2024-11-12 21:04:19,433 - INFO - Generating dependency: ./generated\frontend/src/components/ProductDetail.js
+2024-11-12 21:04:21,049 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:21,050 - INFO - token_usage_dep: 34
+2024-11-12 21:04:21,455 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:21,456 - INFO - Dependency ./generated\frontend/src/components/ProductDetail.js validated successfully without updating main code.
+2024-11-12 21:04:21,457 - INFO - Generating dependency: ./generated\frontend/src/components/Cart.js
+2024-11-12 21:04:27,453 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:27,454 - INFO - token_usage_dep: 143
+2024-11-12 21:04:32,589 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:32,590 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Cart.js
+2024-11-12 21:04:32,591 - INFO - Generating dependency: ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 21:04:38,040 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:38,041 - INFO - token_usage_dep: 128
+2024-11-12 21:04:43,818 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:43,820 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 21:04:43,820 - INFO - Generating dependency: ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 21:04:50,426 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:50,427 - INFO - token_usage_dep: 139
+2024-11-12 21:04:55,581 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:55,582 - WARNING - Main code updated for compatibility with ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 21:04:55,583 - INFO - Generating dependency: ./generated\frontend/public/index.html
+2024-11-12 21:04:57,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:04:57,770 - INFO - token_usage_dep: 27
+2024-11-12 21:05:03,718 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:03,719 - WARNING - Main code updated for compatibility with ./generated\frontend/public/index.html
+2024-11-12 21:05:03,720 - INFO - Generating dependency: ./generated\backend/app.js
+2024-11-12 21:05:13,055 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:13,056 - INFO - token_usage_dep: 192
+2024-11-12 21:05:13,467 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:13,468 - INFO - Dependency ./generated\backend/app.js validated successfully without updating main code.
+2024-11-12 21:05:13,469 - INFO - Generating dependency: ./generated\backend/routes/products.js
+2024-11-12 21:05:16,699 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:16,700 - INFO - token_usage_dep: 52
+2024-11-12 21:05:22,300 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:22,301 - WARNING - Main code updated for compatibility with ./generated\backend/routes/products.js
+2024-11-12 21:05:22,302 - INFO - Generating dependency: ./generated\backend/routes/auth.js
+2024-11-12 21:05:24,698 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:24,700 - INFO - token_usage_dep: 95
+2024-11-12 21:05:30,073 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:30,075 - WARNING - Main code updated for compatibility with ./generated\backend/routes/auth.js
+2024-11-12 21:05:30,075 - INFO - Generating dependency: ./generated\backend/models/User.js
+2024-11-12 21:05:31,443 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:31,445 - INFO - token_usage_dep: 36
+2024-11-12 21:05:38,034 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:38,036 - WARNING - Main code updated for compatibility with ./generated\backend/models/User.js
+2024-11-12 21:05:38,036 - INFO - Generating dependency: ./generated\backend/models/Product.js
+2024-11-12 21:05:39,675 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:39,676 - INFO - token_usage_dep: 34
+2024-11-12 21:05:50,115 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:50,117 - WARNING - Main code updated for compatibility with ./generated\backend/models/Product.js
+2024-11-12 21:05:50,117 - INFO - Generating dependency: ./generated\backend/controllers/productController.js
+2024-11-12 21:05:58,405 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:05:58,406 - INFO - token_usage_dep: 247
+2024-11-12 21:06:12,129 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:06:12,130 - WARNING - Main code updated for compatibility with ./generated\backend/controllers/productController.js
+2024-11-12 21:06:12,131 - INFO - Generating dependency: ./generated\backend/controllers/authController.js
+2024-11-12 21:06:18,516 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:06:18,517 - INFO - token_usage_dep: 218
+2024-11-12 21:06:31,428 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:06:31,429 - WARNING - Main code updated for compatibility with ./generated\backend/controllers/authController.js
+2024-11-12 21:06:31,430 - INFO - Generating dependency: ./generated\backend/config/db.js
+2024-11-12 21:06:34,204 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:06:34,205 - INFO - token_usage_dep: 40
+2024-11-12 21:06:48,634 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:06:48,635 - WARNING - Main code updated for compatibility with ./generated\backend/config/db.js
+2024-11-12 21:06:48,637 - INFO - Generating dependency: ./generated\backend/middleware/authMiddleware.js
+2024-11-12 21:06:51,463 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:06:51,464 - INFO - token_usage_dep: 69
+2024-11-12 21:07:05,346 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:07:05,347 - WARNING - Main code updated for compatibility with ./generated\backend/middleware/authMiddleware.js
+2024-11-12 21:07:05,348 - INFO - Generating dependency: ./generated\database/init.js
+2024-11-12 21:07:11,809 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:07:11,811 - INFO - token_usage_dep: 124
+2024-11-12 21:07:29,718 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:07:29,719 - WARNING - Main code updated for compatibility with ./generated\database/init.js
+2024-11-12 21:07:29,720 - INFO - Generating dependency: ./generated\auth/passport.js
+2024-11-12 21:07:38,280 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:07:38,281 - INFO - token_usage_dep: 167
+2024-11-12 21:07:53,322 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:07:53,323 - WARNING - Main code updated for compatibility with ./generated\auth/passport.js
+2024-11-12 21:07:53,324 - INFO - Generating dependency: ./generated\tests/frontend/App.test.js
+2024-11-12 21:08:01,973 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:08:01,974 - INFO - token_usage_dep: 146
+2024-11-12 21:08:17,698 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:08:17,700 - WARNING - Main code updated for compatibility with ./generated\tests/frontend/App.test.js
+2024-11-12 21:08:17,700 - INFO - Generating dependency: ./generated\tests/backend/productController.test.js
+2024-11-12 21:08:38,705 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:08:38,707 - INFO - token_usage_dep: 433
+2024-11-12 21:08:59,233 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:08:59,234 - WARNING - Main code updated for compatibility with ./generated\tests/backend/productController.test.js
+2024-11-12 21:08:59,234 - INFO - Generating dependency: ./generated\tests/backend/authController.test.js
+2024-11-12 21:09:13,559 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:09:13,561 - INFO - token_usage_dep: 230
+2024-11-12 21:09:29,662 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:09:29,663 - WARNING - Main code updated for compatibility with ./generated\tests/backend/authController.test.js
+2024-11-12 21:09:29,664 - INFO - Generating dependency: ./generated\tests/integration/productRoutes.test.js
+2024-11-12 21:09:53,684 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:09:53,685 - INFO - token_usage_dep: 292
+2024-11-12 21:10:12,222 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:10:12,224 - WARNING - Main code updated for compatibility with ./generated\tests/integration/productRoutes.test.js
+2024-11-12 21:10:12,227 - INFO - Generating dependency: ./generated\tests/integration/authRoutes.test.js
+2024-11-12 21:10:22,911 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:10:22,912 - INFO - token_usage_dep: 228
+2024-11-12 21:10:41,620 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:10:41,621 - WARNING - Main code updated for compatibility with ./generated\tests/integration/authRoutes.test.js
+2024-11-12 21:10:41,622 - INFO - Generating dependency: ./generated\deployment/ci.yml
+2024-11-12 21:10:45,914 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:10:45,915 - INFO - token_usage_dep: 85
+2024-11-12 21:11:01,785 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:01,786 - WARNING - Main code updated for compatibility with ./generated\deployment/ci.yml
+2024-11-12 21:11:01,789 - INFO - Generating dependency: ./generated\deployment/cd.yml
+2024-11-12 21:11:05,596 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:05,597 - INFO - token_usage_dep: 70
+2024-11-12 21:11:22,640 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:22,641 - WARNING - Main code updated for compatibility with ./generated\deployment/cd.yml
+2024-11-12 21:11:22,643 - INFO - Generating dependency: ./generated\deployment/Dockerfile
+2024-11-12 21:11:23,870 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:23,872 - INFO - token_usage_dep: 20
+2024-11-12 21:11:24,315 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:24,316 - INFO - Dependency ./generated\deployment/Dockerfile validated successfully without updating main code.
+2024-11-12 21:11:24,317 - INFO - Generating dependency: ./generated\deployment/docker-compose.yml
+2024-11-12 21:11:26,324 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:26,326 - INFO - token_usage_dep: 30
+2024-11-12 21:11:26,680 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:11:26,681 - INFO - Dependency ./generated\deployment/docker-compose.yml validated successfully without updating main code.
+2024-11-12 21:11:26,690 - INFO - Project built successfully!
+2024-11-12 21:11:26,692 - INFO - File saved: ./generated\generated\frontend/src/components/App.js
+2024-11-12 21:11:26,693 - INFO - File saved: ./generated\generated\frontend/src/index.js
+2024-11-12 21:11:26,694 - INFO - File saved: ./generated\generated\frontend/src/components/Home.js
+2024-11-12 21:11:26,695 - INFO - File saved: ./generated\generated\frontend/src/components/ProductList.js
+2024-11-12 21:11:26,696 - INFO - File saved: ./generated\generated\frontend/src/components/ProductDetail.js
+2024-11-12 21:11:26,698 - INFO - File saved: ./generated\generated\frontend/src/components/Cart.js
+2024-11-12 21:11:26,698 - INFO - File saved: ./generated\generated\frontend/src/components/Auth/Login.js
+2024-11-12 21:11:26,699 - INFO - File saved: ./generated\generated\frontend/src/components/Auth/Register.js
+2024-11-12 21:11:26,699 - INFO - File saved: ./generated\generated\frontend/public/index.html
+2024-11-12 21:11:26,700 - INFO - File saved: ./generated\generated\backend/app.js
+2024-11-12 21:11:26,701 - INFO - File saved: ./generated\generated\backend/routes/index.js
+2024-11-12 21:11:26,702 - INFO - File saved: ./generated\generated\backend/routes/products.js
+2024-11-12 21:11:26,707 - INFO - File saved: ./generated\generated\backend/routes/auth.js
+2024-11-12 21:11:26,709 - INFO - File saved: ./generated\generated\backend/models/User.js
+2024-11-12 21:11:26,709 - INFO - File saved: ./generated\generated\backend/models/Product.js
+2024-11-12 21:11:26,710 - INFO - File saved: ./generated\generated\backend/controllers/productController.js
+2024-11-12 21:11:26,711 - INFO - File saved: ./generated\generated\backend/controllers/authController.js
+2024-11-12 21:11:26,712 - INFO - File saved: ./generated\generated\backend/config/db.js
+2024-11-12 21:11:26,713 - INFO - File saved: ./generated\generated\backend/middleware/authMiddleware.js
+2024-11-12 21:11:26,714 - INFO - File saved: ./generated\generated\database/init.js
+2024-11-12 21:11:26,715 - INFO - File saved: ./generated\generated\auth/passport.js
+2024-11-12 21:11:26,716 - INFO - File saved: ./generated\generated\tests/frontend/App.test.js
+2024-11-12 21:11:26,717 - INFO - File saved: ./generated\generated\tests/backend/productController.test.js
+2024-11-12 21:11:26,718 - INFO - File saved: ./generated\generated\tests/backend/authController.test.js
+2024-11-12 21:11:26,721 - INFO - File saved: ./generated\generated\tests/integration/productRoutes.test.js
+2024-11-12 21:11:26,723 - INFO - File saved: ./generated\generated\tests/integration/authRoutes.test.js
+2024-11-12 21:11:26,725 - INFO - File saved: ./generated\generated\deployment/ci.yml
+2024-11-12 21:11:26,726 - INFO - File saved: ./generated\generated\deployment/cd.yml
+2024-11-12 21:11:26,728 - INFO - File saved: ./generated\generated\deployment/Dockerfile
+2024-11-12 21:11:26,729 - INFO - File saved: ./generated\generated\deployment/docker-compose.yml
+2024-11-12 21:11:26,738 - INFO - metrics:
+2024-11-12 21:11:26,739 - INFO - Saving metrics for evaluation...
+2024-11-12 21:11:26,743 - INFO - Metrics saved successfully.

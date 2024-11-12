@@ -1,0 +1,95 @@
+2024-11-12 21:22:30,496 - INFO - Default generation mechanism.
+2024-11-12 21:22:30,497 - INFO - Generating file: ./generated\frontend/src/index.js
+2024-11-12 21:22:32,213 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:32,214 - INFO - Token usage for iteration 1: 23
+2024-11-12 21:22:32,216 - INFO - Generating file: ./generated\frontend/src/components/App.js
+2024-11-12 21:22:33,332 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:33,333 - INFO - Token usage for iteration 2: 36
+2024-11-12 21:22:33,334 - INFO - Generating file: ./generated\frontend/src/components/Home.js
+2024-11-12 21:22:34,887 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:34,888 - INFO - Token usage for iteration 3: 31
+2024-11-12 21:22:34,889 - INFO - Generating file: ./generated\frontend/src/components/ProductList.js
+2024-11-12 21:22:36,896 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:36,899 - INFO - Token usage for iteration 4: 44
+2024-11-12 21:22:36,900 - INFO - Generating file: ./generated\frontend/src/components/ProductDetail.js
+2024-11-12 21:22:39,427 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:39,428 - INFO - Token usage for iteration 5: 29
+2024-11-12 21:22:39,429 - INFO - Generating file: ./generated\frontend/src/components/Cart.js
+2024-11-12 21:22:41,935 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:41,936 - INFO - Token usage for iteration 6: 51
+2024-11-12 21:22:41,937 - INFO - Generating file: ./generated\frontend/src/components/Auth/Login.js
+2024-11-12 21:22:47,606 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:47,608 - INFO - Token usage for iteration 7: 85
+2024-11-12 21:22:47,610 - INFO - Generating file: ./generated\frontend/src/components/Auth/Register.js
+2024-11-12 21:22:53,833 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:53,834 - INFO - Token usage for iteration 8: 94
+2024-11-12 21:22:53,836 - INFO - Generating file: ./generated\frontend/public/index.html
+2024-11-12 21:22:55,987 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:55,989 - INFO - Token usage for iteration 9: 26
+2024-11-12 21:22:55,990 - INFO - Generating file: ./generated\backend/app.js
+2024-11-12 21:22:59,316 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:22:59,317 - INFO - Token usage for iteration 10: 83
+2024-11-12 21:22:59,319 - INFO - Generating file: ./generated\backend/routes/index.js
+2024-11-12 21:23:00,553 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:00,554 - INFO - Token usage for iteration 11: 22
+2024-11-12 21:23:00,555 - INFO - Generating file: ./generated\backend/routes/products.js
+2024-11-12 21:23:04,994 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:04,996 - INFO - Token usage for iteration 12: 96
+2024-11-12 21:23:04,998 - INFO - Generating file: ./generated\backend/routes/auth.js
+2024-11-12 21:23:11,998 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:11,999 - INFO - Token usage for iteration 13: 153
+2024-11-12 21:23:12,000 - INFO - Generating file: ./generated\backend/models/User.js
+2024-11-12 21:23:14,197 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:14,199 - INFO - Token usage for iteration 14: 45
+2024-11-12 21:23:14,201 - INFO - Generating file: ./generated\backend/models/Product.js
+2024-11-12 21:23:16,813 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:16,814 - INFO - Token usage for iteration 15: 48
+2024-11-12 21:23:16,816 - INFO - Generating file: ./generated\backend/controllers/productController.js
+2024-11-12 21:23:28,305 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:28,306 - INFO - Token usage for iteration 16: 232
+2024-11-12 21:23:28,313 - INFO - Generating file: ./generated\backend/controllers/authController.js
+2024-11-12 21:23:35,480 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:35,482 - INFO - Token usage for iteration 17: 146
+2024-11-12 21:23:35,484 - INFO - Generating file: ./generated\backend/config/db.js
+2024-11-12 21:23:38,212 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:38,213 - INFO - Token usage for iteration 18: 44
+2024-11-12 21:23:38,215 - INFO - Generating file: ./generated\backend/middleware/authMiddleware.js
+2024-11-12 21:23:42,776 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:42,777 - INFO - Token usage for iteration 19: 53
+2024-11-12 21:23:42,779 - INFO - Generating file: ./generated\database/init.js
+2024-11-12 21:23:50,757 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:50,759 - INFO - Token usage for iteration 20: 159
+2024-11-12 21:23:50,761 - INFO - Generating file: ./generated\auth/passport.js
+2024-11-12 21:23:56,354 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:56,356 - INFO - Token usage for iteration 21: 128
+2024-11-12 21:23:56,360 - INFO - Generating file: ./generated\tests/frontend/App.test.js
+2024-11-12 21:23:59,050 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:23:59,052 - INFO - Token usage for iteration 22: 49
+2024-11-12 21:23:59,054 - INFO - Generating file: ./generated\tests/backend/productController.test.js
+2024-11-12 21:24:11,087 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:24:11,088 - INFO - Token usage for iteration 23: 180
+2024-11-12 21:24:11,090 - INFO - Generating file: ./generated\tests/backend/authController.test.js
+2024-11-12 21:24:21,241 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:24:21,243 - INFO - Token usage for iteration 24: 161
+2024-11-12 21:24:21,244 - INFO - Generating file: ./generated\tests/integration/productRoutes.test.js
+2024-11-12 21:24:32,229 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:24:32,230 - INFO - Token usage for iteration 25: 179
+2024-11-12 21:24:32,232 - INFO - Generating file: ./generated\tests/integration/authRoutes.test.js
+2024-11-12 21:24:42,920 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:24:42,921 - INFO - Token usage for iteration 26: 160
+2024-11-12 21:24:42,923 - INFO - Generating file: ./generated\deployment/ci.yml
+2024-11-12 21:24:49,093 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:24:49,094 - INFO - Token usage for iteration 27: 105
+2024-11-12 21:24:49,096 - INFO - Generating file: ./generated\deployment/cd.yml
+2024-11-12 21:24:54,858 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:24:54,863 - INFO - Token usage for iteration 28: 96
+2024-11-12 21:24:54,864 - INFO - Generating file: ./generated\deployment/Dockerfile
+2024-11-12 21:25:03,096 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:25:03,097 - INFO - Token usage for iteration 29: 150
+2024-11-12 21:25:03,098 - INFO - Generating file: ./generated\deployment/docker-compose.yml
+2024-11-12 21:25:10,588 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-12 21:25:10,589 - INFO - Token usage for iteration 30: 61
+2024-11-12 21:25:10,594 - INFO - Project built successfully!
+2024-11-12 21:25:10,604 - INFO - metrics:
+2024-11-12 21:25:10,605 - INFO - Saving metrics for evaluation...
+2024-11-12 21:25:10,608 - INFO - Metrics saved successfully.

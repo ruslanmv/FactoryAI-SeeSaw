@@ -82,3 +82,9 @@ Thumbs.db
 /extraction
 #*.zip
 generated.zip
+
+
+*/generated*
+/examples/ecomerce/seesaw/v1/generated
+/examples/ecomerce/seesaw/v2/generated
+/examples/ecomerce/standard/v2/generated
