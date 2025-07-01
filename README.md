@@ -19,6 +19,8 @@ FactoryAI SeeSaw is an advanced application designed to generate scalable, coher
 
 ---
 
+> **Note:** This project implements the **SeeSaw Method** as referenced in [arXiv:2411.10861](https://arxiv.org/abs/2411.10861). 
+
 ## Features
 
 - **Dynamic Project Tree Generation**: Automatically generate a hierarchical project tree based on input requirements and selected frameworks using the See phase.
